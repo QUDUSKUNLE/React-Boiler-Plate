@@ -6,7 +6,7 @@ export default {
         'webpack-hot-middleware/./client',
         './client/index.jsx'
     ],
-    devtool: 'source-map',
+    devtool: 'eval',
     output: {
         path: path.join(__dirname, '/client'),
         publicPath: '/',
