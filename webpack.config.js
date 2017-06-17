@@ -3,6 +3,7 @@ const path = require('path');
 
 export default {
     entry: [
+        'webpack-hot-middleware/./client',
         './client/index.jsx'
     ],
     devtool: 'source-map',
@@ -11,12 +12,20 @@ export default {
         publicPath: '/',
         filename: 'index.js'
     },
+    plugins: [
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+    ],
 
     module: {
         loaders: [{
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: [
+                    'react-hot-loader',
+                    'babel-loader'
+                ],
             },
             {
                 test: /\.scss?$/,
