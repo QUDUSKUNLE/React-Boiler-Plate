@@ -5,7 +5,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>
-          Hello World, Omo Nigeria
+          Hello Andela<strong>, here I come</strong>
         </h1>
       </div>
     )
